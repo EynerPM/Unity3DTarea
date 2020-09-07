@@ -2,28 +2,32 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DibujadorPuntos : MonoBehaviour
+public class DibujadorPuntos : Dibujador
 {
     //ATRIBUTOS
     [Range(1,10)]
     int longitud = 10;
-    public Configuracion myConfig;
     
     [SerializeField, HideInInspector]
     Figura[] figura;
     MeshFilter[] meshFilter;
 
     
-    void Start()
+    protected override void Start()
     {
-        //myConfig = new Configuracion();
-        Screen.SetResolution(myConfig.screenWidth, myConfig.screenHeight, true);
-        
+        Inicializar();
+        CrearPuntos();
+    }
 
+    protected override void Inicializar()
+    {
+        base.Inicializar();
         meshFilter = new MeshFilter [myConfig.elementos];
         figura = new Figura[myConfig.elementos];
-        //centro = new Vector3(1,0,0);
+    }
 
+    void CrearPuntos()
+    {
         for(int i = 0; i < myConfig.elementos; ++i)
         {
             meshFilter[i] = new MeshFilter();
@@ -42,7 +46,17 @@ public class DibujadorPuntos : MonoBehaviour
         }
     }
 
-    Vector3 GenerarCentroAleatorio()
+    new public void Mostrar()
+    {
+        base.Mostrar();
+    }
+
+    new public void Ocultar()
+    {
+        base.Ocultar();
+    }
+
+    protected override Vector3 GenerarCentroAleatorio()
     {
         Vector3 resultado = new Vector3( Random.Range(myConfig.minValue.x + longitud, myConfig.maxValue.x - longitud), 
                                          Random.Range(myConfig.minValue.y + longitud, myConfig.maxValue.y - longitud), 

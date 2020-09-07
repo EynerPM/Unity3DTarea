@@ -2,23 +2,29 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DibujadorLineas : MonoBehaviour
+public class DibujadorLineas : Dibujador
 {
     //ATRIBUTOS
     [Range(1,8)]
     int grosor = 8;
     [Range(30,50)]
     int distancia;   
-    public Configuracion myConfig;
-    
 
-    void Start()
+
+    protected override void Start()
     {
-        //myConfig = new Configuracion();
-        Screen.SetResolution(myConfig.screenWidth, myConfig.screenHeight, true);
-        
-        distancia = Random.Range(30,50);
+        Inicializar();
+        CrearLineas();
+    }
 
+    protected override void Inicializar()
+    {
+        base.Inicializar();
+        distancia = Random.Range(30,50);
+    }
+
+    void CrearLineas()
+    {   
         for(int i = 0; i < myConfig.elementos; ++i)
         {
             
@@ -38,7 +44,17 @@ public class DibujadorLineas : MonoBehaviour
         }
     }
 
-    Vector3 GenerarCentroAleatorio()
+    new public void Mostrar()
+    {
+        base.Mostrar();
+    }
+
+    new public void Ocultar()
+    {
+        base.Ocultar();
+    }
+
+    protected override Vector3 GenerarCentroAleatorio()
     {
         Vector3 resultado = new Vector3( Random.Range(myConfig.minValue.x + (distancia/2), myConfig.maxValue.x - (distancia/2)), 
                                          Random.Range(myConfig.minValue.y + (distancia/2), myConfig.maxValue.y - (distancia/2)), 
