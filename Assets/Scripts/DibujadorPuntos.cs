@@ -40,7 +40,7 @@ public class DibujadorPuntos : Dibujador
             meshFilter[i].sharedMesh = new Mesh();
             
             Vector3 centro = GenerarCentroAleatorio();//new Vector3(centro.x * i * 5, centro.y, centro.z);
-            figura[i] = new Cubo(meshFilter[i].sharedMesh, centro, longitud);
+            figura[i] = new Esfera(meshFilter[i].sharedMesh, centro, longitud);
             figura[i].CreateMesh();
 
         }

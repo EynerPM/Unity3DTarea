@@ -43,15 +43,16 @@
      <Compile Include="Assets\Scripts\Version Prueba\DibujadorPuntosTest.cs" />
      <Compile Include="Assets\Scripts\Version Prueba\CilindroTest.cs" />
      <Compile Include="Assets\Scripts\DibujadorPuntos.cs" />
+     <Compile Include="Assets\Scripts\DibujadorEditor.cs" />
      <Compile Include="Assets\Scripts\Version Prueba\CuboTest.cs" />
-     <Compile Include="Assets\Scripts\Version Prueba\Esfera.cs" />
+     <Compile Include="Assets\Scripts\Version Prueba\EsferaX.cs" />
+     <Compile Include="Assets\Scripts\Dibujador.cs" />
      <Compile Include="Assets\Scripts\Piramide.cs" />
      <Compile Include="Assets\Scripts\Version Prueba\PiramideTest.cs" />
      <Compile Include="Assets\Scripts\Version Prueba\CuboPrueba.cs" />
      <Compile Include="Assets\Scripts\DibujadorLineas.cs" />
      <Compile Include="Assets\Scripts\Figura.cs" />
-     <Compile Include="Assets\Scripts\DibujadorEditor.cs" />
-     <Compile Include="Assets\Scripts\Dibujador.cs" />
+     <Compile Include="Assets\Scripts\Esfera.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
