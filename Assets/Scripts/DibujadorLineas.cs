@@ -31,6 +31,7 @@ public class DibujadorLineas : Dibujador
             GameObject meshCilindro = GameObject.CreatePrimitive(PrimitiveType.Cylinder);
             meshCilindro.transform.parent = transform;
             meshCilindro.name = "linea " + i.ToString();
+            meshCilindro.GetComponent<MeshRenderer>().material.SetColor("_Color",Random.ColorHSV());
 
             // Genera la malla Cilindro
             Vector3 centro = GenerarCentroAleatorio();

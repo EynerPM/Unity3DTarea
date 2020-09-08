@@ -35,6 +35,7 @@ public class DibujadorPuntos : Dibujador
             GameObject meshObj = new GameObject("punto " + i.ToString());
             meshObj.transform.parent = transform;
             meshObj.AddComponent<MeshRenderer>().sharedMaterial = new Material(Shader.Find("Standard"));
+            meshObj.GetComponent<MeshRenderer>().material.SetColor("_Color",Random.ColorHSV());
             
             meshFilter[i] = meshObj.AddComponent<MeshFilter>();
             meshFilter[i].sharedMesh = new Mesh();
